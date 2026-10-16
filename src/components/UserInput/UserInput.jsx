@@ -34,7 +34,7 @@ export default function UserInput(props){
         <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes["input-group"]}>
           <p>
-            <label htmlFor="current-savings">Current Savings ($)</label>
+            <label htmlFor="current-savings">Current Savings (₦)</label>
             <input onChange={(event) => inputHandler('current-savings', event.target.value)} 
             type="number" 
             id="current-savings" 
@@ -42,7 +42,7 @@ export default function UserInput(props){
             />
           </p>
           <p>
-            <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
+            <label htmlFor="yearly-contribution">Yearly Savings (₦)</label>
             <input onChange={(event) => inputHandler('yearly-contribution', event.target.value)}
             type="number" 
             id="yearly-contribution" 

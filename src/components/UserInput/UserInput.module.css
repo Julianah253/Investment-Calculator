@@ -3,7 +3,7 @@
   max-width: 30rem;
   margin: 2rem auto;
   border-radius: 4px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+  background: linear-gradient(180deg, #47389e, #47389e);
 }
 
 .input-group {
@@ -24,7 +24,7 @@
 .form input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #76c0ae;
+  border: 1px solid #8d76c0;
   border-radius: 0.25rem;
   background-color: transparent;
   color: #c2e9e0;
@@ -41,7 +41,7 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
-  background: linear-gradient(180deg, #1f584b, #17493d);
+  background: linear-gradient(180deg, #062c18, #062c18);
   color: #c2e9e0;
   font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
@@ -56,7 +56,7 @@
 }
 
 .button:hover {
-  background: linear-gradient(180deg, #1b5346, #113c32);
+  background: radial-gradient(#210c49, #1a1f1d);
 }
 
 .buttonAlt:hover {
