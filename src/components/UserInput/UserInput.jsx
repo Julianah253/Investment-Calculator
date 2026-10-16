@@ -14,7 +14,12 @@ export default function UserInput(props){
     const submitHandler = (event) => {
         event.preventDefault();
         
-        props.onCalculate(userInput)
+        props.onCalculate({
+          'current-savings': Number(userInput['current-savings']),
+          'yearly-contribution': Number(userInput['yearly-contribution']),
+          'expected-return': Number(userInput['expected-return']),
+          duration: Number(userInput.duration),
+        })
     }
 
     const resetHandler = () => {
@@ -25,7 +30,7 @@ export default function UserInput(props){
       setUserInput((prevInput) => {
         return  {
           ...prevInput,
-          [input] : +value,
+          [input] : value,
         }
       })
     };
