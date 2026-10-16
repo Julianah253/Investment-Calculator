@@ -25,7 +25,7 @@ export default function UserInput(props){
       setUserInput((prevInput) => {
         return  {
           ...prevInput,
-          [input] : value,
+          [input] : +value,
         }
       })
     };
