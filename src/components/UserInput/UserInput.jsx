@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classes from './UserInput.module.css'
 
 export default function UserInput(props){
   const initialUserInput = {
@@ -30,8 +31,8 @@ export default function UserInput(props){
     };
 
     return(
-        <form className="form" onSubmit={submitHandler}>
-        <div className="input-group">
+        <form className={classes.form} onSubmit={submitHandler}>
+        <div className={classes["input-group"]}>
           <p>
             <label htmlFor="current-savings">Current Savings ($)</label>
             <input onChange={(event) => inputHandler('current-savings', event.target.value)} 
@@ -49,7 +50,7 @@ export default function UserInput(props){
             />
           </p>
         </div>
-        <div className="input-group">
+        <div className={classes["input-group"]}>
           <p>
             <label htmlFor="expected-return">
               Expected Interest (%, per year)
@@ -69,11 +70,11 @@ export default function UserInput(props){
             />
           </p>
         </div>
-        <p className="actions">
-          <button onClick={resetHandler} type="reset" className="buttonAlt">
+        <p className={classes.actions}>
+          <button onClick={resetHandler} type="reset" className={classes["buttonAlt"]}>
             Reset
           </button>
-          <button type="submit" className="button">
+          <button type="submit" className={classes.button}>
             Calculate
           </button>
         </p>
