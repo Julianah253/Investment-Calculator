@@ -17,3 +17,9 @@
   font-size: 0.85rem;
   color: #c2e9e0;
 }
+
+@media (max-width: 600px) {
+  .result{
+    text-align: center;
+  }
+}
