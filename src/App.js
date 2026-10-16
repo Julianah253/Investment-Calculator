@@ -11,6 +11,10 @@ function App() {
       setUserInput(userInput);
   };
 
+  const resetHandler = () => {
+    setUserInput(null);
+  };
+
   const yearlyData = []; 
 
     if(userInput){
@@ -36,7 +40,7 @@ function App() {
     <div>
       <Header/>
 
-      <UserInput onCalculate={calculateHandler}/>
+      <UserInput onCalculate={calculateHandler} onReset={resetHandler}/>
 
       {!userInput && <p style={{textAlign: 'center'}}>No investment calculated yet.</p>}
       {userInput && <ResultsTable data={yearlyData} initialInvestment={userInput['current-savings']}/>}

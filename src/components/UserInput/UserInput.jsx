@@ -12,18 +12,19 @@ export default function UserInput(props){
   const [userInput, setUserInput] = useState(initialUserInput);
 
     const submitHandler = (event) => {
-        event.preventDefault();
-        
-        props.onCalculate({
-          'current-savings': Number(userInput['current-savings']),
-          'yearly-contribution': Number(userInput['yearly-contribution']),
-          'expected-return': Number(userInput['expected-return']),
-          duration: Number(userInput.duration),
-        })
-    }
+      event.preventDefault();
+
+      props.onCalculate({
+        'current-savings': Number(userInput['current-savings']),
+        'yearly-contribution': Number(userInput['yearly-contribution']),
+        'expected-return': Number(userInput['expected-return']),
+        duration: Number(userInput.duration),
+      });
+    };
 
     const resetHandler = () => {
         setUserInput(initialUserInput)
+        props.onReset()
     };
 
     const inputHandler = (input, value) => {
@@ -39,19 +40,21 @@ export default function UserInput(props){
         <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes["input-group"]}>
           <p>
-            <label htmlFor="current-savings">Current Savings (₦)</label>
+            <label htmlFor="current-savings">Current Savings ($)</label>
             <input onChange={(event) => inputHandler('current-savings', event.target.value)} 
             type="number" 
             id="current-savings" 
             value={userInput['current-savings']}
+            required
             />
           </p>
           <p>
-            <label htmlFor="yearly-contribution">Yearly Savings (₦)</label>
+            <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
             <input onChange={(event) => inputHandler('yearly-contribution', event.target.value)}
             type="number" 
             id="yearly-contribution" 
             value={userInput['yearly-contribution']}
+            required
             />
           </p>
         </div>
@@ -64,6 +67,7 @@ export default function UserInput(props){
             type="number" 
             id="expected-return" 
             value={userInput['expected-return']}
+            required
             />
           </p>
           <p>
@@ -72,6 +76,7 @@ export default function UserInput(props){
             type="number" 
             id="duration" 
             value={userInput['duration']} // or userInput.duration
+            required
             />
           </p>
         </div>
